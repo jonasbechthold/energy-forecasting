@@ -34,6 +34,7 @@ jobs:
           zone: '${{ env.ZONE }}'
           ssh_private_key: '${{ secrets.GCP_SSH_PRIVATE_KEY }}'
           command: >
+            source ~/.poetry/env &&
             cd ~/energy-forecasting &&
             git pull &&
             sh deploy/ml-pipeline.sh
