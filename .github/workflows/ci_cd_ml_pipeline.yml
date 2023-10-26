@@ -35,5 +35,5 @@ jobs:
           ssh_private_key: '${{ secrets.GCP_SSH_PRIVATE_KEY }}'
           command: >
             cd ~/energy-forecasting &&
-            git pull origin main &&
+            git pull &&
             sh deploy/ml-pipeline.sh
