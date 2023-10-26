@@ -322,10 +322,10 @@ def attach_best_model_to_feature_store(
         "url": f"https://wandb.ai/{SETTINGS['WANDB_ENTITY']}/{SETTINGS['WANDB_PROJECT']}/artifacts/{best_model_artifact.type}/{best_model_artifact._name}/{best_model_artifact.version}/overview",
         "artifact_name": f"{SETTINGS['WANDB_ENTITY']}/{SETTINGS['WANDB_PROJECT']}/{best_model_artifact.name}",
     }
-    feature_view.add_tag(name="wandb", value=fs_tag)
-    feature_view.add_training_dataset_tag(
-        training_dataset_version=training_dataset_version, name="wandb", value=fs_tag
-    )
+    #feature_view.add_tag(name="wandb", value=fs_tag)
+    #feature_view.add_training_dataset_tag(
+    #    training_dataset_version=training_dataset_version, name="wandb", value=fs_tag
+    #)
 
     # Upload the model to the Hopsworks model registry.
     best_model_dir = best_model_artifact.download()
