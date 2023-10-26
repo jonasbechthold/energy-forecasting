@@ -8,7 +8,7 @@ on:
       - '**/*.yml'
       - '**/*.md'
     branches: [ "main" ]
-    
+
 env:
   CLOUDSDK_CORE_PROJECT: '${{ vars.CLOUDSDK_CORE_PROJECT }}'
   USER: '${{ vars.USER }}'
@@ -34,6 +34,6 @@ jobs:
           zone: '${{ env.ZONE }}'
           ssh_private_key: '${{ secrets.GCP_SSH_PRIVATE_KEY }}'
           command: >
-            cd ~/energy-forecasting && 
-            git pull && 
+            cd ~/energy-forecasting &&
+            git pull origin main &&
             sh deploy/ml-pipeline.sh
